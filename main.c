@@ -169,10 +169,10 @@ int main(int argc, char** argv)
     if(!client->devinfo.srtg) {
         if(client->devinfo.cpid != 0x8950) {
             ERROR("Not DFU mode!");
-            return -1;
+            return 0;
         }
         ERROR("Not DFU mode! Already pwned iBSS mode?");
-        return -1;
+        return 0;
     }
     
     if((client->devinfo.cpfm & 0x1) == 0) {
